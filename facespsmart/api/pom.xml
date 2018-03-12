@@ -32,6 +32,15 @@
 			<artifactId>metadatasharing-api</artifactId>
 		</dependency>
         -->
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>metadatadeploy-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>metadatasharing-api</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
