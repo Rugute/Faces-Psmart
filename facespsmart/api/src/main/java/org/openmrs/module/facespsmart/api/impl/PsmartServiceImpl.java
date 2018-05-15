@@ -13,11 +13,16 @@
  */
 package org.openmrs.module.facespsmart.api.impl;
 
+import org.openmrs.api.APIException;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.module.facespsmart.api.PsmartService;
 import org.openmrs.module.facespsmart.api.db.PsmartDAO;
+import org.openmrs.module.facespsmart.metadata.PsmartStore;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * It is a default implementation of {@link PsmartService}.
@@ -40,5 +45,40 @@ public class PsmartServiceImpl extends BaseOpenmrsService implements PsmartServi
      */
     public PsmartDAO getDao() {
 	    return dao;
+    }
+
+    @Override
+    public void setPsmartDAO(PsmartDAO dao) {
+
+    }
+
+    @Override
+    public PsmartStore savePsmartStoreObject(PsmartStore psmartStore) throws APIException {
+        return null;
+    }
+
+    @Override
+    public PsmartStore getPsmartStoreObject(Integer integer) {
+        return null;
+    }
+
+    @Override
+    public PsmartStore getPsmartStoreByUuid(String uuid) {
+        return null;
+    }
+
+    @Override
+    public PsmartStore updatePsmartStore(PsmartStore psmartStore) {
+        return null;
+    }
+
+    @Override
+    public List<PsmartStore> getAllPsmartStoreObjects() {
+        return null;
+    }
+
+    @Override
+    public List<PsmartStore> objectsProcessedSinceDate(Date from, Date to, String operation) {
+        return null;
     }
 }

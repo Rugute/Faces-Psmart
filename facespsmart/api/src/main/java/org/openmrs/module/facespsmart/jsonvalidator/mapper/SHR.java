@@ -64,7 +64,7 @@ public final class SHR {
             public final String iDENTIFIER_TYPE;
             public final String aSSIGNING_AUTHORITY;
             public final String aSSIGNING_FACILITY;
-    
+
             @JsonCreator
             public EXTERNAL_PATIENT_ID(@JsonProperty("ID") String iD, @JsonProperty("IDENTIFIER_TYPE") String iDENTIFIER_TYPE, @JsonProperty("ASSIGNING_AUTHORITY") String aSSIGNING_AUTHORITY, @JsonProperty("ASSIGNING_FACILITY") String aSSIGNING_FACILITY){
                 this.iD = iD;
@@ -79,7 +79,7 @@ public final class SHR {
             public final String iDENTIFIER_TYPE;
             public final String aSSIGNING_AUTHORITY;
             public final String aSSIGNING_FACILITY;
-    
+
             @JsonCreator
             public INTERNAL_PATIENT_ID(@JsonProperty("ID") String iD, @JsonProperty("IDENTIFIER_TYPE") String iDENTIFIER_TYPE, @JsonProperty("ASSIGNING_AUTHORITY") String aSSIGNING_AUTHORITY, @JsonProperty("ASSIGNING_FACILITY") String aSSIGNING_FACILITY){
                 this.iD = iD;
@@ -93,7 +93,7 @@ public final class SHR {
             public final String fIRST_NAME;
             public final String mIDDLE_NAME;
             public final String lAST_NAME;
-    
+
             @JsonCreator
             public PATIENT_NAME(@JsonProperty("FIRST_NAME") String fIRST_NAME, @JsonProperty("MIDDLE_NAME") String mIDDLE_NAME, @JsonProperty("LAST_NAME") String lAST_NAME){
                 this.fIRST_NAME = fIRST_NAME;
@@ -105,20 +105,20 @@ public final class SHR {
         public static final class PATIENT_ADDRESS {
             public final PHYSICAL_ADDRESS pHYSICAL_ADDRESS;
             public final String pOSTAL_ADDRESS;
-    
+
             @JsonCreator
             public PATIENT_ADDRESS(@JsonProperty("PHYSICAL_ADDRESS") PHYSICAL_ADDRESS pHYSICAL_ADDRESS, @JsonProperty("POSTAL_ADDRESS") String pOSTAL_ADDRESS){
                 this.pHYSICAL_ADDRESS = pHYSICAL_ADDRESS;
                 this.pOSTAL_ADDRESS = pOSTAL_ADDRESS;
             }
-    
+
             public static final class PHYSICAL_ADDRESS {
                 public final String vILLAGE;
                 public final String wARD;
                 public final String sUB_COUNTY;
                 public final String cOUNTY;
                 public final String nEAREST_LANDMARK;
-        
+
                 @JsonCreator
                 public PHYSICAL_ADDRESS(@JsonProperty("VILLAGE") String vILLAGE, @JsonProperty("WARD") String wARD, @JsonProperty("SUB_COUNTY") String sUB_COUNTY, @JsonProperty("COUNTY") String cOUNTY, @JsonProperty("NEAREST_LANDMARK") String nEAREST_LANDMARK){
                     this.vILLAGE = vILLAGE;
@@ -133,18 +133,18 @@ public final class SHR {
         public static final class MOTHER_DETAILS {
             public final MOTHER_NAME mOTHER_NAME;
             public final MOTHER_IDENTIFIER mOTHER_IDENTIFIER[];
-    
+
             @JsonCreator
             public MOTHER_DETAILS(@JsonProperty("MOTHER_NAME") MOTHER_NAME mOTHER_NAME, @JsonProperty("MOTHER_IDENTIFIER") MOTHER_IDENTIFIER[] mOTHER_IDENTIFIER){
                 this.mOTHER_NAME = mOTHER_NAME;
                 this.mOTHER_IDENTIFIER = mOTHER_IDENTIFIER;
             }
-    
+
             public static final class MOTHER_NAME {
                 public final String fIRST_NAME;
                 public final String mIDDLE_NAME;
                 public final String lAST_NAME;
-        
+
                 @JsonCreator
                 public MOTHER_NAME(@JsonProperty("FIRST_NAME") String fIRST_NAME, @JsonProperty("MIDDLE_NAME") String mIDDLE_NAME, @JsonProperty("LAST_NAME") String lAST_NAME){
                     this.fIRST_NAME = fIRST_NAME;
@@ -152,13 +152,13 @@ public final class SHR {
                     this.lAST_NAME = lAST_NAME;
                 }
             }
-    
+
             public static final class MOTHER_IDENTIFIER {
                 public final String iD;
                 public final String iDENTIFIER_TYPE;
                 public final String aSSIGNING_AUTHORITY;
                 public final String aSSIGNING_FACILITY;
-        
+
                 @JsonCreator
                 public MOTHER_IDENTIFIER(@JsonProperty("ID") String iD, @JsonProperty("IDENTIFIER_TYPE") String iDENTIFIER_TYPE, @JsonProperty("ASSIGNING_AUTHORITY") String aSSIGNING_AUTHORITY, @JsonProperty("ASSIGNING_FACILITY") String aSSIGNING_FACILITY){
                     this.iD = iD;
@@ -194,7 +194,7 @@ public final class SHR {
             public final String fIRST_NAME;
             public final String mIDDLE_NAME;
             public final String lAST_NAME;
-    
+
             @JsonCreator
             public NOK_NAME(@JsonProperty("FIRST_NAME") String fIRST_NAME, @JsonProperty("MIDDLE_NAME") String mIDDLE_NAME, @JsonProperty("LAST_NAME") String lAST_NAME){
                 this.fIRST_NAME = fIRST_NAME;
@@ -224,10 +224,12 @@ public final class SHR {
 
         public static final class PROVIDER_DETAILS {
             public final String nAME;
-    
+            public final String iD;
+
             @JsonCreator
-            public PROVIDER_DETAILS(@JsonProperty("NAME") String nAME){
+            public PROVIDER_DETAILS(@JsonProperty("NAME") String nAME, @JsonProperty("ID") String iD){
                 this.nAME = nAME;
+                this.iD = iD;
             }
         }
     }
@@ -257,7 +259,7 @@ public final class SHR {
             public final String aSSIGNING_AUTHORITY;
             public final String aSSIGNING_FACILITY;
             public final String rEPLACEMENT_REASON;
-    
+
             @JsonCreator
             public PRIOR_INTERNAL_IDENTIFIERS(@JsonProperty("ID") String iD, @JsonProperty("IDENTIFIER_TYPE") String iDENTIFIER_TYPE, @JsonProperty("ASSIGNING_AUTHORITY") String aSSIGNING_AUTHORITY, @JsonProperty("ASSIGNING_FACILITY") String aSSIGNING_FACILITY, @JsonProperty("REPLACEMENT_REASON") String rEPLACEMENT_REASON){
                 this.iD = iD;

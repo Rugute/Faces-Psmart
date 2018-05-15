@@ -37,6 +37,7 @@
         <metadatadeployVersion>1.2</metadatadeployVersion>
         <metadatasharingVersion>1.1.8</metadatasharingVersion>
         <jacksonVersion>2.9.2</jacksonVersion>
+		<idgenVersion>2.6</idgenVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -124,6 +125,13 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jacksonVersion}</version>
             </dependency>
+
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>idgen-api</artifactId>
+				<version>${idgenVersion}</version>
+				<scope>provided</scope>
+			</dependency>
 
 			<!-- End OpenMRS modules -->
 			
