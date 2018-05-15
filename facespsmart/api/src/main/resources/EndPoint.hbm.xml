@@ -6,7 +6,7 @@
 <hibernate-mapping package="org.openmrs.module.facespsmart">
 
 
-    <class name="org.openmrs.module.facespsmart.PsmartStore">
+    <class name="org.openmrs.module.facespsmart.metadata.PsmartStore">
         <id name="id" type="int" column="id" unsaved-value="0">
             <generator class="native" />
         </id>

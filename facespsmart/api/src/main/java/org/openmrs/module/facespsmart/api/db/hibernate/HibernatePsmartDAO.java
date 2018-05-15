@@ -16,12 +16,12 @@ package org.openmrs.module.facespsmart.api.db.hibernate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
-import org.openmrs.module.facespsmart.api.db.EndPointDAO;
+import org.openmrs.module.facespsmart.api.db.PsmartDAO;
 
 /**
- * It is a default implementation of  {@link EndPointDAO}.
+ * It is a default implementation of  {@link PsmartDAO}.
  */
-public class HibernateEndPointDAO implements EndPointDAO {
+public class HibernatePsmartDAO implements PsmartDAO {
 	protected final Log log = LogFactory.getLog(this.getClass());
 	
 	private SessionFactory sessionFactory;

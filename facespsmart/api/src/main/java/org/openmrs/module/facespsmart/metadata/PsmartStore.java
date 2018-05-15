@@ -1,4 +1,4 @@
-package org.openmrs.module.facespsmart;
+package org.openmrs.module.facespsmart.metadata;
 
 import org.openmrs.BaseOpenmrsData;
 

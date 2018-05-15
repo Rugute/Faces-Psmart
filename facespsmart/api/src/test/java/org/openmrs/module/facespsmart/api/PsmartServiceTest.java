@@ -13,24 +13,18 @@
  */
 package org.openmrs.module.facespsmart.api;
 
-import org.openmrs.api.OpenmrsService;
-import org.springframework.transaction.annotation.Transactional;
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.openmrs.api.context.Context;
+import org.openmrs.test.BaseModuleContextSensitiveTest;
 
 /**
- * This service exposes module's core functionality. It is a Spring managed bean which is configured in moduleApplicationContext.xml.
- * <p>
- * It can be accessed only via Context:<br>
- * <code>
- * Context.getService(EndPointService.class).someMethod();
- * </code>
- * 
- * @see org.openmrs.api.context.Context
+ * Tests {@link ${PsmartService}}.
  */
-@Transactional
-public interface EndPointService extends OpenmrsService {
-     
-	/*
-	 * Add service methods here
-	 * 
-	 */
+public class PsmartServiceTest extends BaseModuleContextSensitiveTest {
+	
+	@Test
+	public void shouldSetupContext() {
+		assertNotNull(Context.getService(PsmartService.class));
+	}
 }

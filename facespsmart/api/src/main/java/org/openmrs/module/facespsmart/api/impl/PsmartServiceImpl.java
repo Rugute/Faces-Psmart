@@ -16,29 +16,29 @@ package org.openmrs.module.facespsmart.api.impl;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.module.facespsmart.api.EndPointService;
-import org.openmrs.module.facespsmart.api.db.EndPointDAO;
+import org.openmrs.module.facespsmart.api.PsmartService;
+import org.openmrs.module.facespsmart.api.db.PsmartDAO;
 
 /**
- * It is a default implementation of {@link EndPointService}.
+ * It is a default implementation of {@link PsmartService}.
  */
-public class EndPointServiceImpl extends BaseOpenmrsService implements EndPointService {
+public class PsmartServiceImpl extends BaseOpenmrsService implements PsmartService {
 	
 	protected final Log log = LogFactory.getLog(this.getClass());
 	
-	private EndPointDAO dao;
+	private PsmartDAO dao;
 	
 	/**
      * @param dao the dao to set
      */
-    public void setDao(EndPointDAO dao) {
+    public void setDao(PsmartDAO dao) {
 	    this.dao = dao;
     }
     
     /**
      * @return the dao
      */
-    public EndPointDAO getDao() {
+    public PsmartDAO getDao() {
 	    return dao;
     }
 }

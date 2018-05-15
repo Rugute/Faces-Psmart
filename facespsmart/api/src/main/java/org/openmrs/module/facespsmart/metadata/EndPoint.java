@@ -11,7 +11,7 @@
  *
  * Copyright (C) OpenMRS, LLC.  All Rights Reserved.
  */
-package org.openmrs.module.facespsmart;
+package org.openmrs.module.facespsmart.metadata;
 
 import java.io.Serializable;
 import org.openmrs.BaseOpenmrsObject;
