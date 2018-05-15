@@ -15,28 +15,67 @@ package org.openmrs.module.facespsmart.api.db.hibernate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.openmrs.api.db.DAOException;
 import org.openmrs.module.facespsmart.api.db.PsmartDAO;
+import org.openmrs.module.facespsmart.metadata.PsmartStore;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * It is a default implementation of  {@link PsmartDAO}.
  */
 public class HibernatePsmartDAO implements PsmartDAO {
 	protected final Log log = LogFactory.getLog(this.getClass());
-	
+
 	private SessionFactory sessionFactory;
-	
+
 	/**
-     * @param sessionFactory the sessionFactory to set
-     */
-    public void setSessionFactory(SessionFactory sessionFactory) {
-	    this.sessionFactory = sessionFactory;
-    }
-    
+	 * @param sessionFactory the sessionFactory to set
+	 */
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	/**
-     * @return the sessionFactory
-     */
-    public SessionFactory getSessionFactory() {
-	    return sessionFactory;
-    }
+	 * @return the sessionFactory
+	 */
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	@Override
+	public PsmartStore savePsmartStoreObject(PsmartStore psmartStore) throws DAOException {
+		sessionFactory.getCurrentSession().saveOrUpdate(psmartStore);
+		return psmartStore;
+	}
+
+	@Override
+	public PsmartStore getPsmartStoreObject(Integer id) {
+		PsmartStore p = null;
+		p = (PsmartStore) sessionFactory.getCurrentSession().createQuery("from PsmartStore p where p.id = :id").setString(
+				"id", String.valueOf(id)).uniqueResult();
+		return p;
+	}
+
+	@Override
+	public PsmartStore getPsmartStoreByUuid(String uuid) {
+		PsmartStore p = null;
+		p = (PsmartStore) sessionFactory.getCurrentSession().createQuery("from PsmartStore p where p.uuid = :uuid").setString(
+				"uuid", uuid).uniqueResult();
+		return p;
+	}
+
+	@Override
+	public List<PsmartStore> getAllPsmartStoreObjects() {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(PsmartStore.class);
+		return criteria.list();
+	}
+
+	@Override
+	public List<PsmartStore> objectsProcessedSinceDate(Date from, Date to, String operation) {
+		return null;
+	}
 }
